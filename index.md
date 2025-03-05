@@ -86,12 +86,6 @@ displayed if the 'eventbrite' field in the header is not set.
 </script>
 {% endif %}
 
-<p class="text-center">
-  <a href="https://indico.scc.kit.edu/event/4960/">
-    <button type="button" class="btn btn-info">Register for this workshop</button>
-  </a>
-</p>
-
 <h2 id="general">General Information</h2>
 
 {% comment %}
@@ -298,6 +292,12 @@ Edit the text to match who can attend the workshop. For instance:
 <p id="who-can-attend">
     <strong>Who can attend?:</strong>
     This workshop is primarily intended for the members of the Karlsruhe Institute of Technology.
+</p>
+
+<p class="text-center">
+  <a href="https://indico.scc.kit.edu/event/4960/">
+    <button type="button" class="btn btn-info">Register for this workshop</button>
+  </a>
 </p>
 
 <hr/>
