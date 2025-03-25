@@ -12,9 +12,8 @@ https://jupyter-notebook.readthedocs.io/en/stable/notebook.html#browser-compatib
     <a href="https://python.org">Python</a> is a popular language for
     research computing, and great for general-purpose programming as
     well.  Installing all of its research packages individually can be
-    a bit difficult, so we recommend
-    <a href="https://www.anaconda.com/download/success">Anaconda</a>,
-    an all-in-one installer.
+    a bit difficult, so we propose to use
+    <a href="https://conda-forge.org/download/">Miniforge</a>.
   </p>
 
   <p>
@@ -74,11 +73,16 @@ https://jupyter-notebook.readthedocs.io/en/stable/notebook.html#browser-compatib
       </article>
       <article role="tabpanel" class="tab-pane" id="python-linux">
         <ol>
-          <li>Open <a href="https://www.anaconda.com/download/success">https://www.anaconda.com/download/success</a> with your web browser.</li>
-          <li>Download the Anaconda Installer with Python 3 for Linux.<br>
+          <li>Open a terminal. On most versions of Linux, it is accessible by running 
+            the Gnome Terminal or KDE Konsole or xterm, which can be found 
+            via the applications menu or the search bar.</li>
+          <li>Download the Miniforge Installer with Python 3 by typing the following command:<br>
             (The installation requires using the shell. If you aren't
             comfortable doing the installation yourself
-            stop here and request help at the workshop.)
+            stop here and request help at the workshop.)<br>
+            `curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"`<br>
+            OR<br>
+            `wget "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"`
           </li>
           <li>
             Open a terminal window and navigate to the directory where
