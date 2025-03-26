@@ -49,15 +49,31 @@ https://jupyter-notebook.readthedocs.io/en/stable/notebook.html#browser-compatib
       <article role="tabpanel" class="tab-pane active" id="python-windows">
         <ol>
           <li>Open <a href="https://www.anaconda.com/download/success">https://www.anaconda.com/download/success</a> with your web browser.</li>
-          <li>Download the Anaconda for Windows installer with Python 3. (If you are not sure which version to choose, you probably want the 64-bit Graphical Installer <em>Anaconda3-...-Windows-x86_64.exe</em>)</li>
-          <li>Install Python 3 by running the Anaconda Installer, using all of the defaults for installation <em>except</em> make sure to check <strong>Add Anaconda to my PATH environment variable</strong>.</li>
+          <li>Download the <a href="https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe">Miniforge installer for Windows</a>.</li>
+          <li>Install Python 3 by running the Miniforge Installer, using all of the defaults for installation.</li>
+          <li>For the workshop, we will create a specific Python environment called "swc-python":<br>
+              Start the program "Miniforge Prompt", then type (without the $):
+            <pre>conda env create -n swc-python -f https://raw.githubusercontent.com/MarieHouillon/swc-miniforge-install/refs/heads/gh-pages/_includes/install_instructions/python-environment.yml</pre>
+          </li>
+          <li>
+            You can now activate the environment "swc-python" with the following command:
+            <pre>conda activate swc-python</pre>
+            If <code>(swc-python)</code> is displayed at the beginning of the command line prompt instead of <code>(base)</code>,
+            your Python environment has been set up correctly.
+          </li>
+          <li>
+            You can test that you can open Jupyter Notebooks in your browser by running:
+            <pre>jupyter notebook</pre>
+            After running this command, a Jupyter web page should open in your web browser, showing a list of files and directories. If it is the case, you are all set!
+          </li>
+          <li>
+            To shut down Jupyter, you can press the keys <kbd>Ctrl</kbd>+<kbd>C</kbd> in the Miniforge Prompt, then close the Miniforge Prompt window.
+          </li>
+          <li>
+            Note: if you close and reopen the Miniforge Prompt, you have to reactivate the workshop environment in order to be able to run Jupyter Notebooks again:
+            <pre>conda activate swc-python</pre>
+          </li>
         </ol>
-        <h4>Video Tutorial</h4>
-        <div class="yt-wrapper2">
-        <div class="yt-wrapper">
-        <iframe type="text/html" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" src="https://www.youtube-nocookie.com/embed/xxQ0mzZ8UvA?modestbranding=1&playsinline=1&iv_load_policy=3&rel=0" class="yt-frame" allowfullscreen></iframe>
-        </div>
-        </div>
       </article>
       <article role="tabpanel" class="tab-pane" id="python-macos">
         <ol>
@@ -106,12 +122,6 @@ https://jupyter-notebook.readthedocs.io/en/stable/notebook.html#browser-compatib
 conda activate swc-python</pre>
           </li>
         </ol>
-        <h4>Video Tutorial</h4>
-        <div class="yt-wrapper2">
-        <div class="yt-wrapper">
-        <iframe type="text/html" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" src="https://www.youtube-nocookie.com/embed/TcSAln46u9U?modestbranding=1&playsinline=1&iv_load_policy=3&rel=0" class="yt-frame" allowfullscreen></iframe>
-        </div>
-        </div>
       </article>
       <article role="tabpanel" class="tab-pane" id="python-linux">
         <ol>
