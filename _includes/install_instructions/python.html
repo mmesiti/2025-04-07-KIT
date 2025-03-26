@@ -12,7 +12,8 @@ https://jupyter-notebook.readthedocs.io/en/stable/notebook.html#browser-compatib
     <a href="https://python.org">Python</a> is a popular language for
     research computing, and great for general-purpose programming as
     well.  Installing all of its research packages individually can be
-    a bit difficult, so we propose to use
+    a bit difficult, so we propose to use the package and environment management system
+    <a href="https://anaconda.org/anaconda/conda">Conda</a>, that we will install using
     <a href="https://conda-forge.org/download/">Miniforge</a>.
   </p>
 
@@ -86,14 +87,14 @@ https://jupyter-notebook.readthedocs.io/en/stable/notebook.html#browser-compatib
             <pre>wget "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"</pre>
           </li>
           <li>
-            Install Miniforge by typing the following command (by running this command, it is assumed that you agree with Miniforge's license):
+            Run the Miniforge installer by typing the following command (by running this command, it is assumed that you agree with Miniforge's license):
             <pre>bash Miniforge3-$(uname)-$(uname -m).sh -b</pre>
           </li>
           <li>
-            You can now activate Miniforge with the following command:
+            You can now activate the base environement of Miniforge with the following command:
             <pre>source ~/miniforge3/bin/activate</pre>
-            This command will activate the "base" environment of Miniforge and has to be run each time you want to use Miniforge.
-            Miniforge is activated if your terminal shows <code>(base)</code> at the beginning of the command line prompt.
+            This command has to be run each time you want to use Miniforge programs.
+            If Miniforge has correctly been activated, your terminal should show <code>(base)</code> at the beginning of the command line prompt.
           </li>
           <li>
             For the workshop, we will create a specific Python environment called "swc-python", using the following command:
@@ -108,16 +109,24 @@ https://jupyter-notebook.readthedocs.io/en/stable/notebook.html#browser-compatib
             for the files.
           </li>
           <li>
-            You can now activate the environment "swc-python" with the following commands:
-            <pre>
-              source ~/miniforge3/bin/activate
-              conda activate swc-python
-            </pre>
+            You can now activate the environment "swc-python" with the following command:
+            <pre>conda activate swc-python</pre>
             If <code>(swc-python)</code> is displayed at the beginning of the command line prompt instead of <code>(base)</code>,
             your Python environment has been set up correctly.
           </li>
           <li>
+            You can test that you can open Jupyter Notebooks in your browser by running:
+            <pre>jupyter notebook</pre>
+            After running this command, a Jupyter web page should open in your web browser, showing a list of files and directories. If it is the case, you are all set!
+          </li>
+          <li>
+            To shut down Jupyter, you can press the keys <kbd>Ctrl</kbd>+<kbd>C</kbd> in your terminal, and then <kbd>Y</kbd> to accept to shut down the server.
             Close the terminal window.
+          </li>
+          <li>
+            Note: if you close and reopen the Terminal, you have to reactivate Miniforge environments to be able to run Jupyter Notebooks again:
+            <pre>source ~/miniforge3/bin/activate
+conda activate swc-python</pre>
           </li>
         </ol>
       </article>
