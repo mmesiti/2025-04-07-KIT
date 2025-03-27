@@ -12,9 +12,9 @@ https://jupyter-notebook.readthedocs.io/en/stable/notebook.html#browser-compatib
     <a href="https://python.org">Python</a> is a popular language for
     research computing, and great for general-purpose programming as
     well.  Installing all of its research packages individually can be
-    a bit difficult, so we recommend
-    <a href="https://www.anaconda.com/download/success">Anaconda</a>,
-    an all-in-one installer.
+    a bit difficult, so we propose to use the package and environment management system
+    <a href="https://anaconda.org/anaconda/conda">Conda</a>, that we will install using
+    <a href="https://conda-forge.org/download/">Miniforge</a>.
   </p>
 
   <p>
@@ -48,63 +48,128 @@ https://jupyter-notebook.readthedocs.io/en/stable/notebook.html#browser-compatib
     <div class="tab-content">
       <article role="tabpanel" class="tab-pane active" id="python-windows">
         <ol>
-          <li>Open <a href="https://www.anaconda.com/download/success">https://www.anaconda.com/download/success</a> with your web browser.</li>
-          <li>Download the Anaconda for Windows installer with Python 3. (If you are not sure which version to choose, you probably want the 64-bit Graphical Installer <em>Anaconda3-...-Windows-x86_64.exe</em>)</li>
-          <li>Install Python 3 by running the Anaconda Installer, using all of the defaults for installation <em>except</em> make sure to check <strong>Add Anaconda to my PATH environment variable</strong>.</li>
+          <li>Download the <a href="https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe">Miniforge installer for Windows</a>.</li>
+          <li>Install Python 3 by running the Miniforge Installer, using all of the defaults for installation.</li>
+          <li>For the workshop, we will create a specific Python environment called "swc-python":<br>
+              Start the program "Miniforge Prompt", then type:
+            <pre>conda env create -n swc-python -f https://raw.githubusercontent.com/MarieHouillon/swc-miniforge-install/refs/heads/gh-pages/_includes/install_instructions/python-environment.yml</pre>
+            Press <kbd>Return</kbd> (or <kbd>Enter</kbd>) to execute the command.
+          </li>
+          <li>
+            You can now activate the environment "swc-python" with the following command:
+            <pre>conda activate swc-python</pre>
+            If <code>(swc-python)</code> is displayed at the beginning of the command line prompt instead of <code>(base)</code>,
+            your Python environment has been set up correctly.
+          </li>
+          <li>
+            You can test that you can open Jupyter Notebooks in your browser by running:
+            <pre>jupyter notebook</pre>
+            After running this command, a Jupyter web page should open in your web browser, showing a list of files and directories. If it is the case, you are all set!
+          </li>
+          <li>
+            To shut down Jupyter, you can press the keys <kbd>Ctrl</kbd>+<kbd>C</kbd> in the Miniforge Prompt, then close the Miniforge Prompt window.
+          </li>
+          <li>
+            Note: if you close and reopen the Miniforge Prompt, you have to reactivate the workshop environment in order to be able to run Jupyter Notebooks again:
+            <pre>conda activate swc-python</pre>
+          </li>
         </ol>
-        <h4>Video Tutorial</h4>
-        <div class="yt-wrapper2">
-        <div class="yt-wrapper">
-        <iframe type="text/html" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" src="https://www.youtube-nocookie.com/embed/xxQ0mzZ8UvA?modestbranding=1&playsinline=1&iv_load_policy=3&rel=0" class="yt-frame" allowfullscreen></iframe>
-        </div>
-        </div>
       </article>
       <article role="tabpanel" class="tab-pane" id="python-macos">
         <ol>
-          <li>Open <a href="https://www.anaconda.com/download/success">https://www.anaconda.com/download/success</a> with your web browser.</li>
-          <li>Download the Anaconda Installer with Python 3 for macOS (you can either use the Graphical or the Command Line Installer).</li>
-          <li>Install Python 3 by running the Anaconda Installer using all of the defaults for installation.</li>
-        </ol>
-        <h4>Video Tutorial</h4>
-        <div class="yt-wrapper2">
-        <div class="yt-wrapper">
-        <iframe type="text/html" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" src="https://www.youtube-nocookie.com/embed/TcSAln46u9U?modestbranding=1&playsinline=1&iv_load_policy=3&rel=0" class="yt-frame" allowfullscreen></iframe>
-        </div>
-        </div>
-      </article>
-      <article role="tabpanel" class="tab-pane" id="python-linux">
-        <ol>
-          <li>Open <a href="https://www.anaconda.com/download/success">https://www.anaconda.com/download/success</a> with your web browser.</li>
-          <li>Download the Anaconda Installer with Python 3 for Linux.<br>
+          <li>Open the application Terminal<br>
             (The installation requires using the shell. If you aren't
             comfortable doing the installation yourself
             stop here and request help at the workshop.)
           </li>
-          <li>
-            Open a terminal window and navigate to the directory where
-            the executable is downloaded (e.g., `cd ~/Downloads`).
+          <li>Download the Miniforge Installer with Python 3 by typing the following command:<br>
+            <pre>curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"</pre>
+            OR
+            <pre>wget "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"</pre>
           </li>
           <li>
-            Type <pre>bash Anaconda3-</pre> and then press
-            <kbd>Tab</kbd> to autocomplete the full file name. The name of
-            file you just downloaded should appear.
+            Run the Miniforge installer by typing the following command (by running this command, it is assumed that you agree with Miniforge's license):
+            <pre>bash Miniforge3-$(uname)-$(uname -m).sh -b</pre>
           </li>
           <li>
-            Press <kbd>Enter</kbd>
-            (or <kbd>Return</kbd> depending on your keyboard).
-            You will follow the text-only prompts.
-            To move through the text, press <kbd>Spacebar</kbd>.
-            Type <code>yes</code> and press enter to approve the license.
-            Press <kbd>Enter</kbd> (or <kbd>Return</kbd>)
-            to approve the default location
-            for the files.
-            Type <code>yes</code> and press
-            <kbd>Enter</kbd> (or <kbd>Return</kbd>)
-            to prepend Anaconda to your <code>PATH</code>
-            (this makes the Anaconda distribution the default Python).
+            You can now activate the base environement of Miniforge with the following command:
+            <pre>source ~/miniforge3/bin/activate</pre>
+            This command has to be run each time you want to use Miniforge programs.
+            If Miniforge has correctly been activated, your terminal should show <code>(base)</code> at the beginning of the command line prompt.
           </li>
           <li>
+            For the workshop, we will create a specific Python environment called "swc-python", using the following command:
+            <pre>conda env create -n swc-python -f https://raw.githubusercontent.com/MarieHouillon/swc-miniforge-install/refs/heads/gh-pages/_includes/install_instructions/python-environment.yml</pre>
+          </li>
+          <li>
+            You can now activate the environment "swc-python" with the following command:
+            <pre>conda activate swc-python</pre>
+            If <code>(swc-python)</code> is displayed at the beginning of the command line prompt instead of <code>(base)</code>,
+            your Python environment has been set up correctly.
+          </li>
+          <li>
+            You can test that you can open Jupyter Notebooks in your browser by running:
+            <pre>jupyter notebook</pre>
+            After running this command, a Jupyter web page should open in your web browser, showing a list of files and directories. If it is the case, you are all set!
+          </li>
+          <li>
+            To shut down Jupyter, you can press the keys <kbd>Ctrl</kbd>+<kbd>C</kbd> in your terminal, and then <kbd>Y</kbd> to accept to shut down the server.
             Close the terminal window.
+          </li>
+          <li>
+            Note: if you close and reopen the Terminal, you have to reactivate Miniforge environments to be able to run Jupyter Notebooks again:
+            <pre>source ~/miniforge3/bin/activate
+conda activate swc-python</pre>
+          </li>
+        </ol>
+      </article>
+      <article role="tabpanel" class="tab-pane" id="python-linux">
+        <ol>
+          <li>Open a terminal. On most versions of Linux, it is accessible by running 
+            the Gnome Terminal or KDE Konsole or xterm, which can be found 
+            via the applications menu or the search bar.<br>
+            (The installation requires using the shell. If you aren't
+            comfortable doing the installation yourself
+            stop here and request help at the workshop.)
+          </li>
+          <li>Download the Miniforge Installer with Python 3 by typing the following command:<br>
+            <pre>curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"</pre>
+            OR
+            <pre>wget "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"</pre>
+          </li>
+          <li>
+            Run the Miniforge installer by typing the following command (by running this command, it is assumed that you agree with Miniforge's license):
+            <pre>bash Miniforge3-$(uname)-$(uname -m).sh -b</pre>
+          </li>
+          <li>
+            You can now activate the base environement of Miniforge with the following command:
+            <pre>source ~/miniforge3/bin/activate</pre>
+            This command has to be run each time you want to use Miniforge programs.
+            If Miniforge has correctly been activated, your terminal should show <code>(base)</code> at the beginning of the command line prompt.
+          </li>
+          <li>
+            For the workshop, we will create a specific Python environment called "swc-python", using the following command:
+            <pre>conda env create -n swc-python -f https://raw.githubusercontent.com/MarieHouillon/swc-miniforge-install/refs/heads/gh-pages/_includes/install_instructions/python-environment.yml</pre>
+          </li>
+          <li>
+            You can now activate the environment "swc-python" with the following command:
+            <pre>conda activate swc-python</pre>
+            If <code>(swc-python)</code> is displayed at the beginning of the command line prompt instead of <code>(base)</code>,
+            your Python environment has been set up correctly.
+          </li>
+          <li>
+            You can test that you can open Jupyter Notebooks in your browser by running:
+            <pre>jupyter notebook</pre>
+            After running this command, a Jupyter web page should open in your web browser, showing a list of files and directories. If it is the case, you are all set!
+          </li>
+          <li>
+            To shut down Jupyter, you can press the keys <kbd>Ctrl</kbd>+<kbd>C</kbd> in your terminal, and then <kbd>Y</kbd> to accept to shut down the server.
+            Close the terminal window.
+          </li>
+          <li>
+            Note: if you close and reopen the Terminal, you have to reactivate Miniforge environments to be able to run Jupyter Notebooks again:
+            <pre>source ~/miniforge3/bin/activate
+conda activate swc-python</pre>
           </li>
         </ol>
       </article>
