@@ -1,0 +1,32 @@
+Dear {participant},
+    
+    it has been a while since you attended the Software Carpentry Workshop 
+in Karlsruhe.
+
+As a follow up, we would like to send you a list of links to resources 
+in case you want to learn more.
+
+The first thing that I can recommend is to attend a CodeRefinery tool online workshop.
+which covers he collaborative aspect of Git (GitHub and similar platforms) further,
+reproducible research, open software, documentation, 
+automated testing and modular code development. 
+Most topics are discussed in a language-independent way.
+The next edition will be held at the beginning of Autumn 2025 (exact dates still TBD),
+and will be announced on the mainling lists you are already subscribed to.
+
+If you really cannot wait, all the lessons of CodeRefinery are also available on youtube at
+https://www.youtube.com/@coderefinery.
+
+If you want to practice more your Python, there are several options.
+If you like mathematics and numeric problems, https://projecteuler.net/ might suit your taste.
+
+
+
+Other things to mention:
+For those of you who are more interested in data science, the R and SQL courses
+in the same style are also available at the carpentries website (https://carpentries.org/lessons/).
+Unfortunately I am not aware of anyone teaching them in the near future in Germany,
+but the material is typically considered suitable for self-studying,
+especially if you have had some programming experience before.
+
+
